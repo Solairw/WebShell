@@ -1,0 +1,33 @@
+﻿@page
+@model WebShell.Pages.CreateModel
+@{ 
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Добро пожаловать!</h1>
+    <p>Введите команду в поле ниже:</p>
+    <form method="post" autocomplete="off">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-6 offset-3">
+                <input asp-for="Command.Value" id="command_input" class="form-control" />
+            </div>
+
+            <div class="col-1 offset">
+                <input type="submit" value="Ввод" class="btn btn-primary" />
+            </div>
+            <span asp-validation-for="Command.Value" class="text-danger"></span>
+        </div>
+    </form>
+
+    @Model.Msg
+
+</div>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/inputControl.js"></script>
+    
+}
